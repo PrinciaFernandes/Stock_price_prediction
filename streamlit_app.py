@@ -1,6 +1,7 @@
 import streamlit as st
 
 
+
 dashboard_page = st.Page(
     page = "views/Dashboard.py",
     title = "Dashboards",
