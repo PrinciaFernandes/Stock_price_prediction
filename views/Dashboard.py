@@ -12,7 +12,7 @@ st.set_page_config(
      page_icon= "💲"
 )
 
-bajaj = pd.read_csv(r"model_data\datasets\Bajaj.csv")
+bajaj = pd.read_csv(r"model_data/datasets/Bajaj.csv")
 hdfc  = pd.read_csv(r"model_data\datasets\HDFC.csv")
 Maruti = pd.read_csv(r"\model_data\datasets\Maruti.csv")
 reliance = pd.read_csv(r"\model_data\datasets\Reliance.csv")
