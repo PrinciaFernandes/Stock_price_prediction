@@ -12,19 +12,19 @@ import plotly.graph_objects as go
 st.title("Stock Price Prediction")
 st.text('')
 
-bajaj = pd.read_csv(r"\model_data\datasets\Bajaj.csv")
-hdfc  = pd.read_csv(r"\model_data\datasets\HDFC.csv")
-Maruti = pd.read_csv(r"\model_data\datasets\Maruti.csv")
-reliance = pd.read_csv(r"\model_data\datasets\Reliance.csv")
-TATA = pd.read_csv(r"\model_data\datasets\TATA.csv")
+bajaj = pd.read_csv(r"model_data/datasets/Bajaj.csv")
+hdfc  = pd.read_csv(r"model_data/datasets/HDFC.csv")
+Maruti = pd.read_csv(r"model_data/datasets/Maruti.csv")
+reliance = pd.read_csv(r"/model_data/datasets/Reliance.csv")
+TATA = pd.read_csv(r"/model_data/datasets/TATA.csv")
 
 
 def model_loader(name):
-    model = tf.keras.models.load_model(rf"\model_data\models\{name}\{name}_model.h5")
+    model = tf.keras.models.load_model(rf"model_data/models/{name}/{name}_model.h5")
     return model
 
 def scaler_loader(name):
-    with open(rf"\model_data\models\{name}\{name}_scaler.pkl", 'rb') as f:
+    with open(rf"model_data/models/{name}/{name}_scaler.pkl", 'rb') as f:
         scaler = pickle.load(f)
     return scaler
 
