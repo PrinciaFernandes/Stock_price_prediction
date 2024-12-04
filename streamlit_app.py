@@ -25,3 +25,9 @@ st.logo("assets/nifty 50.png")
 
 pg = st.navigation(pages = [dashboard_page,prediciton_page])
 pg.run()
+
+if __name__ == '__main__':
+    st.set_page_config(
+        layout="wide",  # Adjust layout as needed
+        show_config=False  # Disable configuration panel
+    )
