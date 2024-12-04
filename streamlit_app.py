@@ -1,13 +1,5 @@
 import streamlit as st
 
-# st.title("Stock Price Prediction")
-# st.sidebar.selectbox("Select a company",['Bajaj','HDFC','Maruti','Reliance','TATA'])
-
-# st.date_input("Enter a date:")
-# st.set_page_config(
-#     page_title = "Stock Price page",
-#     page_icon = ":material/attach_money:"
-# )
 
 dashboard_page = st.Page(
     page = "views/Dashboard.py",
