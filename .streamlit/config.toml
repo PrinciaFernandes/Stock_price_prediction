@@ -1,8 +1,9 @@
 [theme]
-primaryColor = "#d33682"
+primaryColor = "#red"
 
-backgroundColor = "#1a1a2e"
+backgroundColor = "#000000"
 
-secondaryBackgroundColor = "#002b36"
+# sidebar
+secondaryBackgroundColor = "#696969"
 
-textColor = "#fff"
+textColor = "#E0E0E0"
