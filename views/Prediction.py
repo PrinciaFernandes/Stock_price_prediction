@@ -18,10 +18,12 @@ Maruti = pd.read_csv(r"model_data/datasets/Maruti.csv")
 reliance = pd.read_csv(r"model_data/datasets/Reliance.csv")
 TATA = pd.read_csv(r"model_data/datasets/TATA.csv")
 
+bajaj_model = tf.keras.models.load_model(rf"model_data/models/Bajaj/Bajaj_model.h5")
+hdfc_model  = tf.keras.models.load_model(rf"model_data/models/HDFC/HDFC_model.h5")
+Maruti_model = tf.keras.models.load_model(rf"model_data/models/Maruti/Maruti_model.h5")
+reliance_model = tf.keras.models.load_model(rf"model_data/models/Reliance/Reliance_model.h5")
+TATA_model = tf.keras.models.load_model(rf"model_data/models/TATA/TATA_model.h5")
 
-def model_loader(name):
-    model = tf.keras.models.load_model(rf"model_data/models/{name}/{name}_model.h5")
-    return model
 
 def scaler_loader(name):
     with open(rf"model_data/models/{name}/{name}_scaler.pkl", 'rb') as f:
@@ -41,11 +43,11 @@ Dataset = {"Bajaj Finance Ltd.":bajaj,
             "Tata Consultancy Services Ltd.": TATA}
 
 models = {
-    "Bajaj Finance Ltd.":[model_loader("Bajaj") , scaler_loader("Bajaj")],
-    "HDFC Bank Ltd." :[model_loader("HDFC") , scaler_loader("HDFC")],
-    "Maruti Suzuki India Ltd." : [model_loader("Maruti") , scaler_loader("Maruti")],
-    "Reliance Industries Ltd.": [model_loader("Reliance") , scaler_loader("Reliance")],
-    "Tata Consultancy Services Ltd." : [model_loader("TATA") , scaler_loader("TATA")]
+    "Bajaj Finance Ltd.":[bajaj_model , scaler_loader("Bajaj")],
+    "HDFC Bank Ltd." :[hdfc_model , scaler_loader("HDFC")],
+    "Maruti Suzuki India Ltd." : [Maruti_model , scaler_loader("Maruti")],
+    "Reliance Industries Ltd.": [reliance_model , scaler_loader("Reliance")],
+    "Tata Consultancy Services Ltd." : [TATA_model, scaler_loader("TATA")]
 }
 
 comp = st.selectbox(" Select a Company",['Bajaj Finance Ltd.','HDFC Bank Ltd.','Maruti Suzuki India Ltd.','Reliance Industries Ltd.','Tata Consultancy Services Ltd.'],index = None)
