@@ -24,9 +24,6 @@ Maruti_model = tf.keras.models.load_model(rf"model_data/models/Maruti/Maruti_mod
 reliance_model = tf.keras.models.load_model(rf"model_data/models/Reliance/Reliance_model.h5")
 TATA_model = tf.keras.models.load_model(rf"model_data/models/TATA/TATA_model.h5")
 
-def model_loader(name):
-    model = tf.keras.models.load_model(rf"model_data/models/{name}/{name}_model.h5")
-    return model
 
 def scaler_loader(name):
     with open(rf"model_data/models/{name}/{name}_scaler.pkl", 'rb') as f:
