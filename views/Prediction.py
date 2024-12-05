@@ -48,7 +48,7 @@ models = {
     "Tata Consultancy Services Ltd." : [model_loader("TATA") , scaler_loader("TATA")]
 }
 
-comp = st.selectbox("Select a Company",['Bajaj Finance Ltd.','HDFC Bank Ltd.','Maruti Suzuki India Ltd.','Reliance Industries Ltd.','Tata Consultancy Services Ltd.'],index = None)
+comp = st.selectbox("""### Select a Company""",['Bajaj Finance Ltd.','HDFC Bank Ltd.','Maruti Suzuki India Ltd.','Reliance Industries Ltd.','Tata Consultancy Services Ltd.'],index = None)
 
 if comp != None:
     model = models[comp][0]
@@ -80,7 +80,7 @@ if comp != None:
     st.write(" ")
 
 
-    n = st.text_input("Enter the no. of days you want to get the prediction",None)
+    n = st.text_input("""### Enter the no. of days you want to get the prediction""",None)
     b = st.button(" Predict",use_container_width=True,key = 10)
     if n != None:
         n = int(n)
